@@ -23,12 +23,12 @@ public class SearchMovieAdvice {
 	public ErrorMessage handleSearchException(MovieSearchException ex) {
 		return new ErrorMessage(HttpStatus.NOT_FOUND.toString(), ex.getMessage(), LocalDateTime.now().toString());
 	}
-	/*@ExceptionHandler(MovieNotFoundException.class)
+	@ExceptionHandler(MovieNotFoundException.class)
 	@ResponseStatus(code=HttpStatus.NOT_FOUND)
 	public ErrorMessage handleDeleteException(MovieNotFoundException ex)
 	{
 		return new ErrorMessage(HttpStatus.NOT_FOUND.toString(), ex.getMessage(), LocalDateTime.now().toString());
-	}*/
+	}
 	@ExceptionHandler(ValidateMovieException.class)
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	public ErrorMessage handleException(ValidateMovieException ex)
@@ -38,10 +38,10 @@ public class SearchMovieAdvice {
 	}
 	
 
-	/*@ExceptionHandler(AddMovieException.class)
+	@ExceptionHandler(AddMovieException.class)
 	@ResponseStatus(code=HttpStatus.NOT_FOUND)
 	public ErrorMessage handleDeleteException(AddMovieException ex)
 	{
 		return new ErrorMessage(HttpStatus.NOT_FOUND.toString(), ex.getMessage(), LocalDateTime.now().toString());
-	}*/
+	}
 }

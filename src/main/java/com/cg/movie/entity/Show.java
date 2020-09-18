@@ -28,6 +28,19 @@ public class Show {
 	private LocalDate showDate;
 	@Column(name="screen_name", length=25)
 	private String screenName;
+	@Column(name="location", length=25)
+	private String location;
+//	@Column(name="area", length=25)
+//	private String area;
+//	
+//	public String getArea() {
+//		return area;
+//	}
+//
+//	public void setArea(String area) {
+//		this.area = area;
+//	}
+
 	
 	@Transient
 	private String screenImg;
@@ -75,6 +88,13 @@ public class Show {
 	public void setScreenName(String screenName) {
 		this.screenName = screenName;
 	}
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
 	public Movie getMovie() {
 		return movie;
@@ -83,6 +103,8 @@ public class Show {
 	public void setMovie(Movie movie) {
 		this.movie = movie;
 	}
+
+	
 
 	public String getScreenImg() {
 		this.screenImg = screenName.substring(0, 3);
